@@ -164,7 +164,7 @@ class StoreApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array{0: null, 1: int, 2: array<string, string[]>} [response data, HTTP status code, HTTP response headers]
      */
     public function deleteOrderWithHttpInfo(
         string $order_id,
@@ -393,7 +393,7 @@ class StoreApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return array of array<string,int>, HTTP status code, HTTP response headers (array of strings)
+     * @return array{0: array<string,int>, 1: int, 2: array<string, string[]>} [response data, HTTP status code, HTTP response headers]
      */
     public function getInventoryWithHttpInfo(
         string $contentType = self::contentTypes['getInventory'][0]
@@ -655,7 +655,7 @@ class StoreApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array{0: \OpenAPI\Client\Model\Order|null, 1: int, 2: array<string, string[]>} [response data, HTTP status code, HTTP response headers]
      */
     public function getOrderByIdWithHttpInfo(
         int $order_id,
@@ -939,7 +939,7 @@ class StoreApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array{0: \OpenAPI\Client\Model\Order|null, 1: int, 2: array<string, string[]>} [response data, HTTP status code, HTTP response headers]
      */
     public function placeOrderWithHttpInfo(
         \OpenAPI\Client\Model\Order $order,
